@@ -6,22 +6,50 @@ import Layout from '../components/Layout';
 
 
 class Badges extends React.Component {
-    state = {data:[
-        {
-            id:1,
-            name:"franco",
-            lastaname: "armani",
-            email:"fran@gmail.com",
-            job:"dev fullstack"
-        },
-        {
-            id:2,
-            name:"juan",
-            lastaname: "perez",
-            email:"juan@gmail.com",
-            job:"dev backend"
-        }
-    ]}
+    constructor(props){
+        super(props);
+        this.state = {data:[]}
+    }
+
+    componentDidMount(){
+        this.timeOutId = setTimeout(() => {
+            this.setState(
+                {data: [
+                    {
+                        id:1,
+                        name:"franco",
+                        lastaname: "armani",
+                        email:"fran@gmail.com",
+                        job:"dev fullstack"
+                    },
+                    {
+                        id:2,
+                        name:"juan",
+                        lastaname: "perez",
+                        email:"juan@gmail.com",
+                        job:"dev backend"
+                    }
+                ]
+            }
+            )}, 2000);
+    }
+
+    componentDidUpdate(prevProps, prevState){
+        console.log({
+            prevProps: prevProps,
+            prevState: prevState
+        });
+
+        console.log({
+            props: this.props,
+            state: this.state
+        });
+    }
+
+    componentWillUnmount(){
+        console.log('componentWillUnmount');
+        clearTimeout(this.timeOutId)
+    }
 
     render(){
         return <>
