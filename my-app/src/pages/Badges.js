@@ -1,6 +1,9 @@
 import React from 'react';
 import Navbar from '../components/Navbar';
 import BadgeList from '../components/BadgeList';
+import { Link } from 'react-router-dom';
+import Layout from '../components/Layout';
+
 
 class Badges extends React.Component {
     state = {data:[
@@ -22,24 +25,14 @@ class Badges extends React.Component {
 
     render(){
         return <>
-            <Navbar/>
+            <Layout>
+                <div className='w-full flex flex-col justify-center items-center'>
+                    <Link to="/badges/new" className='w-32 bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-md text-center'>new badge</Link>
 
-            <div>
-                <button>new badge</button>
-            </div>
-
-            {/* <ul>
-                {this.state.data.map(p =>{
-                    return (
-                        <li key={p.id}>
-                            <p>{p.name}</p>
-                            <p>{p.job}</p>
-                            <hr/>
-                        </li>
-                    )
-                })}
-            </ul> */}
-            <BadgeList data={this.state.data}/>
+        
+                    <BadgeList data={this.state.data}/>
+                </div>
+            </Layout>
         </>
     }
 }
