@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 import Badges from '../pages/Badges';
 import BadgeNew from '../pages/BadgeNew';
+import BadgeEdit from '../pages/BadgeEdit';
 import NotFound from './NotFound';
 
 function App() {
@@ -11,6 +12,7 @@ function App() {
       <Routes>
         <Route path="/badges" element={<Badges />} />
         <Route path="/badges/new" element={<BadgeNew />} />
+        <Route path="/badges/:badgeId/edit" element={<BadgeEdit />} />
         <Route path='*' element={<NotFound/>} />
       </Routes>
     </BrowserRouter>

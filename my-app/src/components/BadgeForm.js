@@ -3,16 +3,16 @@ import React from 'react';
 class BadgeForm extends React.Component {
  
 
-  handleSubmit = (e) => {
-    e.preventDefault();
-    console.log(this.state);
-  };
+  // handleSubmit = (e) => {
+  //   e.preventDefault();
+  //   console.log(this.state);
+  // };
 
 
 
   render() {
     return (
-      <form className="max-w-sm mx-auto mt-6" onSubmit={this.handleSubmit}>
+      <form className="max-w-sm mx-auto mt-6" onSubmit={this.props.onSubmit}>
         <div className="flex flex-col mb-4">
           <label htmlFor="name" className="text-sm font-semibold text-gray-600">Nombre:</label>
           <input
