@@ -66,7 +66,7 @@ export class DataService {
   // Método para eliminar un dato por su ID
   static async deleteDataById(id) {
     try {
-      const response = await fetch(`${this.baseUrl}/${id}`, {
+      const response = await fetch(`http://localhost:3002/data/${id}`, {
         method: "DELETE",
       });
       const data = await response.json();

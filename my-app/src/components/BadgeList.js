@@ -14,7 +14,7 @@ class BadgeList extends React.Component {
         {this.props.data.map((p) => {
           return (
             <li key={p.id} className="w-96 py-4 bg-slate-50 shadow-md rounded-lg overflow-hidden m-4">
-                  <Link to={`${p.id}/edit`}>
+                  <Link to={`${p.id}`}>
                     <p className="text-lg font-semibold">{p.name}</p>
                     <p className="text-sm text-gray-600">{p.job}</p>
                   </Link>
